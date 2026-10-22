@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi mundo divertido</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #24304f;
+      background: linear-gradient(#b9e7ff, #f4e7ff);
+    }
+    header { padding: 35px 15px; }
+    h1 { font-size: 2.4em; }
+    main { max-width: 650px; margin: auto; padding: 15px; }
+    .card {
+      background: white;
+      padding: 22px;
+      margin: 16px 0;
+      border-radius: 22px;
+      box-shadow: 0 5px 15px #6375a333;
+    }
+    button {
+      background: #7056e8;
+      color: white;
+      border: 0;
+      padding: 13px 20px;
+      margin: 6px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover { background: #5037c7; }
+    footer { padding: 25px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 ¡Bienvenido a mi mundo!</h1>
+    <p>Un lugar lleno de juegos y aventuras</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>🎮 Zona de diversión</h2>
+      <p>¡Pulsa el botón y consigue puntos!</p>
+      <h3>Puntos: <span id="puntos">0</span></h3>
+      <button onclick="sumar()">¡Conseguir puntos!</button>
+    </section>
+
+    <section class="card">
+      <h2>🧠 Reto del día</h2>
+      <p>¿Cuánto es 7 × 8?</p>
+      <button onclick="responder(54)">54</button>
+      <button onclick="responder(56)">56</button>
+      <button onclick="responder(64)">64</button>
+      <p id="resultado">¡A ver si aciertas!</p>
+    </section>
+
+    <section class="card">
+      <h2>⭐ Mi rincón</h2>
+      <p>Aquí empieza una gran aventura.</p>
+      <p>¡Cada día podemos añadir algo nuevo!</p>
+    </section>
+  </main>
+
+  <footer>Hecho con imaginación 💙</footer>
+
+  <script>
+    let puntos = 0;
+
+    function sumar() {
+      puntos++;
+      document.getElementById("puntos").textContent = puntos;
+    }
+
+    function responder(numero) {
+      const texto = numero === 56
+        ? "¡Correcto! 🎉"
+        : "¡Prueba otra vez! 💪";
+      document.getElementById("resultado").textContent = texto;
+    }
+  </script>
+</body>
+</html>
